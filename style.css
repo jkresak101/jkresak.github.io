@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Muli', sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+/* places image into background, stretches image to 100% of webpage with no repeating*/
+body {
+    background-image: url("https://images.unsplash.com/photo-1665689285360-2c67e6084d7c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2NjcyMDMwMA&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: 100%;
+   }
+.container{
+    display:flex;
+    width: 90vw;
+}
+.panel{
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height:80vh;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+} 
+
+.panel h3{
+    font-size: 24px;
+    position: absolute;
+    bottom: 40px;
+    left: 145px;
+    margin: 0;
+    opacity: 0;
+}
+/* changing the flex to give it an expanding effect*/
+.panel.active {
+flex: 5;
+}
+/* making the text in each panel expand with photo*/
+.panel.active h3{
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+    font-family: 'Quicksand', sans-serif;
+}
+@media(max-width: 480px){
+    .container{
+        width: 100vw;
+    }
+
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5){
+        display: none;
+    }
+}
+/* controls the audios fixed position*/
+.audio{
+    bottom: 0; 
+    position: fixed; 
+    right: 0; 
+    width: 200px;
+    height: 45px;
+   
+    
+}
